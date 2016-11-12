@@ -232,6 +232,7 @@ h1 {
             outline: none;
             width: 100%;
             padding-left: 6px;
+            padding-right: 27px;
         }
         /*.carrot {
             position: absolute;
@@ -247,8 +248,9 @@ h1 {
             background-image: url(../img/caret-img.png);
             background-repeat: no-repeat;
             background-position-x: 100%;
-            background-size: 20px 21px;
+            background-size: 20px 22px;
             width: 40%;
+            margin-left: 5px;
         }
         .select-group {
             padding-bottom: 15px;
@@ -282,6 +284,9 @@ h1 {
     color: #fff;
     .content-blk {
         position: relative;
+        h1 {
+            min-height: 78px;
+        }
     }
     .boy {
         position: absolute;
