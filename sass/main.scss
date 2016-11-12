@@ -205,9 +205,11 @@ h1 {
     .greet {
         margin-bottom: 20px;
     }
-    .note {
-        font-size: 16px;
-        padding: 30px 0;
+    .main-note {
+        padding: 10px 0 30px;
+        .note {
+            font-size: 16px;
+        }
     }
 }
 
@@ -329,7 +331,7 @@ h1 {
         width: 40px;
         border-radius: 100%;
         border: 3px solid #fff;
-        left: -20px;
+        left: 0;
         top: -20px;
         &:hover {
             cursor: pointer;
@@ -342,7 +344,7 @@ h1 {
         width: 40px;
         border-radius: 100%;
         border: 3px solid #fff;
-        left: 30%;
+        left: 25%;
         top: -20px;
         &:hover {
             cursor: pointer;
@@ -355,7 +357,7 @@ h1 {
         width: 40px;
         border-radius: 100%;
         border: 3px solid #fff;
-        right: 30%;
+        left: 50%;
         top: -20px;
         &:hover {
             cursor: pointer;
@@ -368,40 +370,73 @@ h1 {
         width: 40px;
         border-radius: 100%;
         border: 3px solid #fff;
-        right: -20px;
+        left: 75%;
         top: -20px;
         &:hover {
             cursor: pointer;
         }
     }
-    .ans1 {
+    .opt-5 {
+        background-color: #105D5E;
         position: absolute;
-        left: -10%;
-        bottom: -45px;
-        font-weight: bold;
-        font-size: 18px;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        border: 3px solid #fff;
+        left: 100%;
+        top: -20px;
+        &:hover {
+            cursor: pointer;
+        }
     }
-    .ans2 {
+    .ans {
         position: absolute;
-        left: 30%;
-        bottom: -45px;
-        font-weight: bold;
+        left: -40px;
+        top: 28px;
         font-size: 18px;
+        font-weight: 700;
     }
-    .ans3 {
-        position: absolute;
-        right: 27%;
-        bottom: -45px;
-        font-weight: bold;
-        font-size: 18px;
+    .ans-2 {
+        left: 24%
     }
-    .ans4 {
-        position: absolute;
-        right: -10%;
-        bottom: -45px;
-        font-weight: bold;
-        font-size: 18px;
+    .ans-3 {
+        left: 49%
     }
+    .ans-4 {
+        left: 74%
+    }
+    .ans-5 {
+        left: 95%;
+        width: 14%;
+    }
+    // .ans1 {
+    //     position: absolute;
+    //     left: -10%;
+    //     bottom: -45px;
+    //     font-weight: bold;
+    //     font-size: 18px;
+    // }
+    // .ans2 {
+    //     position: absolute;
+    //     left: 30%;
+    //     bottom: -45px;
+    //     font-weight: bold;
+    //     font-size: 18px;
+    // }
+    // .ans3 {
+    //     position: absolute;
+    //     right: 27%;
+    //     bottom: -45px;
+    //     font-weight: bold;
+    //     font-size: 18px;
+    // }
+    // .ans4 {
+    //     position: absolute;
+    //     right: -10%;
+    //     bottom: -45px;
+    //     font-weight: bold;
+    //     font-size: 18px;
+    // }
 }
 
 .thankyou {

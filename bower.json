@@ -1,6 +1,6 @@
 {
-  "name": "Pantaloons",
-  "description": "Pantaloons",
+  "name": "pantaloons",
+  "description": "pantaloons",
   "main": "gulpfile.js",
   "authors": [
     "chintan@wohlig.com"

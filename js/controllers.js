@@ -56,6 +56,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot2 = false;
             $scopen.displayDot3 = false;
             $scope.displayDot4 = false;
+            $scope.displayDot5 = false;
 
 
         } else if (id == 2) {
@@ -65,6 +66,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot2 = true;
             $scope.displayDot3 = false;
             $scope.displayDot4 = false;
+            $scope.displayDot5 = false;
 
         } else if (id == 3) {
 
@@ -72,6 +74,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot2 = false;
             $scope.displayDot3 = true;
             $scope.displayDot4 = false;
+            $scope.displayDot5 = false;
 
         } else if (id == 4) {
 
@@ -79,25 +82,34 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot2 = false;
             $scope.displayDot3 = false;
             $scope.displayDot4 = true;
+            $scope.displayDot5 = false;
+
+        } else if (id == 5) {
+
+            $scope.displayDot1 = false;
+            $scope.displayDot2 = false;
+            $scope.displayDot3 = false;
+            $scope.displayDot4 = false;
+            $scope.displayDot5 = true;
 
         }
     };
 
 
     $scope.questions = [{
-            question: "1. I am aware of my goals/KRAs and understand them well"
+            question: "1. I am aware of my goals/KRAs and understand them well."
         }, {
-            question: "2. My manager provides feedback on my performance"
+            question: "2. My manager provides feedback on my performance regularly."
         }, {
-            question: "3. I receive training to understand and do my job well"
+            question: "3. I receive training to understand and do my job well."
         }, {
-            question: "4. My manager encourages me to apply the learning in my day to day work"
+            question: "4. My manager encourages me to apply the learning in my day to day work."
         }, {
-            question: "5. I have good understanding of the incentive scheme "
+            question: "5. I have good understanding of the incentive scheme. "
         }, {
-            question: "6. My manager helps and guides me to improve in my job"
+            question: "6. My manager helps and guides me to improve in my job."
         }, {
-            question: "7. In my store, customer service is given the maximum importance"
+            question: "7. In my store, customer service is given the maximum importance."
         }, {
             question: "8. My manager encourages teamwork and expects us to help across departments/functions."
         }, {
@@ -107,21 +119,21 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }, {
             question: "11. I take my weekly offs on a regular basis."
         }, {
-            question: "12. My store manager is open and clear while communicating with us"
+            question: "12. My store manager is open and clear while communicating with us."
         }, {
             question: "13. My store manager connects with us to understand our concerns/challenges."
         }, {
-            question: "14. The washroom facilities are clean at the store"
+            question: "14. The washroom facilities are clean at the store."
         }, {
-            question: "15. I have access to safe drinking water at the store"
+            question: "15. I have access to safe drinking water at the store."
         }, {
-            question: "16. I get time to rest during my breaks while at work"
+            question: "16. I get time to rest during my breaks while at work."
         }, {
             question: "17. I am aware of the process to raise a concern related to Value Violation / Harassment."
         }, {
             question: "18. The store environment is safe for me to work in."
         }, {
-            question: "19. I am satisfied/enjoy working with Pantaloons"
+            question: "19. I am satisfied/happy working with Pantaloons."
         }, {
             question: "20. I will refer Pantaloons as a good place to work to my friends and family members."
         }
