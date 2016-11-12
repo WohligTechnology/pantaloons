@@ -278,8 +278,9 @@ h1 {
 
 .steps {
     background-image: url("../img/main-bg.png");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     padding-top: 8%;
     color: #fff;
     .content-blk {
