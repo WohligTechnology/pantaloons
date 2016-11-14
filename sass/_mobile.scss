@@ -1,4 +1,13 @@
-@media (max-width: $screen-md-max) {}
+@media (max-width: $screen-md-max) {
+    .content-blk {
+        padding: 40px 15px;
+    }
+    .steps {
+        .ans-5 {
+            width: 30%;
+        }
+    }
+}
 
 @media (max-width: $screen-sm-max) {}
 

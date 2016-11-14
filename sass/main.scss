@@ -162,11 +162,12 @@ h1 {
 
 .next {
     background-color: #9D1E20;
-    padding: 8px 143px;
+    // padding: 8px 143px;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
+    width: 300px;
     border: 0;
     outline: none !important;
     &:hover {
@@ -260,11 +261,12 @@ h1 {
     }
     .begin {
         background-color: #9D1E20;
-        padding: 8px 50px;
+        // padding: 8px 50px;
+        width: 350px;
         font-weight: bold;
-        font-size: 36px;
+        font-size: 30px;
         color: #fff;
-        border-radius: 20px;
+        border-radius: 10px;
         border: 0;
         outline: none !important;
         &:hover {
@@ -295,20 +297,20 @@ h1 {
     .boy {
         position: absolute;
         right: 5%;
-        bottom: -25%;
-        width: 225px;
+        bottom: -30%;
+        width: 210px;
     }
     .girl {
         position: absolute;
         right: 5%;
-        bottom: -25%;
+        bottom: -30%;
         width: 160px;
     }
     .refer {
         font-size: 16px;
     }
     .outer-pad {
-        padding: 0px 100px;
+        padding: 20px 100px;
     }
     .prog-bar {
         height: 4px;
@@ -324,89 +326,122 @@ h1 {
         border-radius: 20px;
         margin: 11px;
     }
-    .opt-1 {
-        background-color: #105D5E;
-        position: absolute;
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        left: 0;
-        top: -20px;
-        &:hover {
-            cursor: pointer;
+    .main-opt {
+        .radio-btn {
+            background-color: #105D5E;
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            border: 3px solid #fff;
+            top: -20px;
+            @include transform (translateX(-50%));
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .opt-1 {
+            left: 0;
+        }
+        .opt-2 {
+            left: 25%;
+        }
+        .opt-3 {
+            left: 50%;
+        }
+        .opt-4 {
+            left: 75%;
+        }
+        .opt-5 {
+            left: 100%;
         }
     }
-    .opt-2 {
-        background-color: #105D5E;
-        position: absolute;
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        left: 25%;
-        top: -20px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    .opt-3 {
-        background-color: #105D5E;
-        position: absolute;
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        left: 50%;
-        top: -20px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    .opt-4 {
-        background-color: #105D5E;
-        position: absolute;
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        left: 75%;
-        top: -20px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    .opt-5 {
-        background-color: #105D5E;
-        position: absolute;
-        height: 40px;
-        width: 40px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        left: 100%;
-        top: -20px;
-        &:hover {
-            cursor: pointer;
-        }
-    }
+    // .opt-1 {
+    //     background-color: #105D5E;
+    //     position: absolute;
+    //     height: 40px;
+    //     width: 40px;
+    //     border-radius: 100%;
+    //     border: 3px solid #fff;
+    //     left: 0;
+    //     top: -20px;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+    // .opt-2 {
+    //     background-color: #105D5E;
+    //     position: absolute;
+    //     height: 40px;
+    //     width: 40px;
+    //     border-radius: 100%;
+    //     border: 3px solid #fff;
+    //     left: 25%;
+    //     top: -20px;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+    // .opt-3 {
+    //     background-color: #105D5E;
+    //     position: absolute;
+    //     height: 40px;
+    //     width: 40px;
+    //     border-radius: 100%;
+    //     border: 3px solid #fff;
+    //     left: 50%;
+    //     top: -20px;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+    // .opt-4 {
+    //     background-color: #105D5E;
+    //     position: absolute;
+    //     height: 40px;
+    //     width: 40px;
+    //     border-radius: 100%;
+    //     border: 3px solid #fff;
+    //     left: 75%;
+    //     top: -20px;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
+    // .opt-5 {
+    //     background-color: #105D5E;
+    //     position: absolute;
+    //     height: 40px;
+    //     width: 40px;
+    //     border-radius: 100%;
+    //     border: 3px solid #fff;
+    //     left: 100%;
+    //     top: -20px;
+    //     &:hover {
+    //         cursor: pointer;
+    //     }
+    // }
     .ans {
         position: absolute;
-        left: -40px;
         top: 28px;
         font-size: 18px;
         font-weight: 700;
+        @include transform (translateX(-50%));
+    }
+    .ans-1 {
+        left: 0;
     }
     .ans-2 {
-        left: 24%
+        left: 25%
     }
     .ans-3 {
-        left: 49%
+        left: 50%
     }
     .ans-4 {
-        left: 74%
+        left: 75%
     }
     .ans-5 {
-        left: 95%;
+        left: 100%;
         width: 14%;
     }
     // .ans1 {
