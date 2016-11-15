@@ -1,6 +1,6 @@
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider', 'ksSwiper'])
 
-.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("home"); //Use same name of .html file
     $scope.menutitle = NavigationService.makeactive("Home"); //This is the Title of the Website
     TemplateService.title = $scope.menutitle;
@@ -14,7 +14,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     ];
 })
 
-.controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('FormCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("form"); //Use same name of .html file
     $scope.menutitle = NavigationService.makeactive("Form"); //This is the Title of the Website
     TemplateService.title = $scope.menutitle;
@@ -22,46 +22,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     $scope.formSubmitted = false;
 
-    $scope.submitForm = function (data) {
+    $scope.submitForm = function(data) {
         console.log(data);
         $scope.formSubmitted = true;
     }
 })
 
-.controller('DetailsCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('DetailsCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("details"); //Use same name of .html file
     $scope.menutitle = NavigationService.makeactive("Details"); //This is the Title of the Website
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-
+    $scope.formData = {};
+    $scope.detailSubmit = function(input) {
+        $scope.saveUser = $.jStorage.set("userDetail", input);
+        console.log('$scope.saveUser', $scope.saveUser);
+        // NavigationService.formSubmit(input,function(data){
+        //   console.log(data);
+        //   console.log(input);
+        //
+        // })
+    }
 
 
 })
 
 
-.controller('StepsCtrl', function ($scope, TemplateService, NavigationService, $timeout, $state) {
+.controller('StepsCtrl', function($scope, TemplateService, NavigationService, $timeout, $state) {
     $scope.template = TemplateService.changecontent("steps"); //Use same name of .html file
     $scope.menutitle = NavigationService.makeactive("Steps"); //This is the Title of the Website
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $scope.questn = [];
-    $scope.showDot = function (id) {
+    $scope.myans = '';
+    $scope.showDot = function(id) {
 
 
         if (id == 1) {
             console.log("inim1");
-
+            $scope.myans = "Strongly Agree";
             $scope.displayDot1 = true;
             $scope.displayDot2 = false;
-            $scopen.displayDot3 = false;
+            $scope.displayDot3 = false;
             $scope.displayDot4 = false;
             $scope.displayDot5 = false;
 
 
         } else if (id == 2) {
 
-
+            $scope.myans = "Agree";
             $scope.displayDot1 = false;
             $scope.displayDot2 = true;
             $scope.displayDot3 = false;
@@ -69,7 +79,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot5 = false;
 
         } else if (id == 3) {
-
+            $scope.myans = "Not Sure";
             $scope.displayDot1 = false;
             $scope.displayDot2 = false;
             $scope.displayDot3 = true;
@@ -77,7 +87,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot5 = false;
 
         } else if (id == 4) {
-
+            $scope.myans = "Disagree";
             $scope.displayDot1 = false;
             $scope.displayDot2 = false;
             $scope.displayDot3 = false;
@@ -85,7 +95,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.displayDot5 = false;
 
         } else if (id == 5) {
-
+            $scope.myans = "Strongly Disagree";
             $scope.displayDot1 = false;
             $scope.displayDot2 = false;
             $scope.displayDot3 = false;
@@ -139,10 +149,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         }
 
     ];
+    $scope.myans = {};
     $scope.boy = true;
     $scope.q = 0;
-    $scope.nextQtn = function (w) {
-
+    $scope.nextQtn = function(w) {
+console.log('$scope.q',$scope.q);
         if (w < $scope.questions.length - 1) {
             w++;
             $scope.q = w;
@@ -155,17 +166,46 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.girl = true;
             }
         } else {
-
+$scope.q = 20;
             $state.go("thankyou");
         }
 
     }
+    $scope.userAnswers = [];
+      $scope.finalData ={};
+    $scope.quesAns = function(ques) {
+        $scope.myques = ques;
+        // if ($scope.displayDot1) {
+        //     $scope.myans = "Strongly Agree";
+        // }
+        // $scope.userAnswers = [];
+        $scope.userAnswers.push({
+            questionString: $scope.myques,
+            answerString: $scope.myans
+        });
 
+        $scope.saveUserDetail = $.jStorage.get("userDetail");
+                // console.log('$scope.saveUserDetail', $scope.saveUserDetail);
+        $scope.saveUser = $.jStorage.set("userDetailQues", $scope.userAnswers);
+        var other = {
+  'userAnswers': $scope.saveUser
+};
+        // console.log('$scope.saveUser', $scope.saveUser);
+        // $scope.finalData =$scope.saveUserDetail + $scope.saveUser;
+        $scope.finalData =_.merge($scope.saveUserDetail, other);
+        // console.log('$scope.finalData',$scope.finalData);
+        if($scope.q > 19){
+          NavigationService.formSubmit($scope.finalData,function(data){
+            // console.log(data);
+            console.log('$scope.finalData',$scope.finalData);
 
+          })
+        }
+    }
 
 })
 
-.controller('ThankYouCtrl', function ($scope, TemplateService, NavigationService, $timeout) {
+.controller('ThankYouCtrl', function($scope, TemplateService, NavigationService, $timeout) {
     $scope.template = TemplateService.changecontent("thankyou"); //Use same name of .html file
     $scope.menutitle = NavigationService.makeactive("Thank You"); //This is the Title of the Website
     TemplateService.title = $scope.menutitle;
@@ -177,17 +217,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 
 
-.controller('headerctrl', function ($scope, TemplateService) {
+.controller('headerctrl', function($scope, TemplateService) {
     $scope.template = TemplateService;
-    $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         $(window).scrollTop(0);
     });
     $.fancybox.close(true);
 })
 
-.controller('languageCtrl', function ($scope, TemplateService, $translate, $rootScope) {
+.controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 
-    $scope.changeLanguage = function () {
+    $scope.changeLanguage = function() {
         console.log("Language CLicked");
 
         if (!$.jStorage.get("language")) {
