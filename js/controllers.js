@@ -175,14 +175,19 @@ $scope.q = 20;
       $scope.finalData ={};
     $scope.quesAns = function(ques) {
         $scope.myques = ques;
+        console.log('$scope.myques',$scope.myques);
         // if ($scope.displayDot1) {
         //     $scope.myans = "Strongly Agree";
         // }
         // $scope.userAnswers = [];
+        // if(_.isEmpty($scope.myques)){
+        //   console.log('yes m empty');
+        // }
         $scope.userAnswers.push({
             questionString: $scope.myques,
             answerString: $scope.myans
         });
+        console.log('$scope.userAnswers',$scope.userAnswers);
 
         $scope.saveUserDetail = $.jStorage.get("userDetail");
                 // console.log('$scope.saveUserDetail', $scope.saveUserDetail);
@@ -194,10 +199,10 @@ $scope.q = 20;
         // $scope.finalData =$scope.saveUserDetail + $scope.saveUser;
         $scope.finalData =_.merge($scope.saveUserDetail, other);
         // console.log('$scope.finalData',$scope.finalData);
-        if($scope.q > 19){
+        if($scope.q > 18){
           NavigationService.formSubmit($scope.finalData,function(data){
             // console.log(data);
-            console.log('$scope.finalData',$scope.finalData);
+            // console.log('$scope.finalData',$scope.finalData);
 
           })
         }

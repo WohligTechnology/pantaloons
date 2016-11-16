@@ -4,7 +4,7 @@ if (isproduction) {
 } else {
     adminURL = "http://localhost/demo/index.php";
 }
-var adminurl = "http://192.168.1.103:1337/api/";
+var adminurl = "http://192.168.100.103:1337/api/";
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
