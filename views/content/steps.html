@@ -4,7 +4,7 @@
             <div class="grey-bg">
                 <div class="content-blk">
                     <h1 class>
-                        {{ questions[q].question }} {{q}}
+                        {{ questions[q].question }}
                     </h1>
                     <p class="refer">(You may want to refer to the language translated sheet before choosing the answer)</p>
                     <div class="outer-pad">
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <!-- <button type="button" class="next btn btn-default" ng-click="nextQtn(q);">Submit</button> -->
-                    <button type="button" class="next btn btn-default" ng-click="quesAns(questions[q].question);nextQtn(q);">Next</button>
+                    <button type="button" class="next btn btn-default" ng-click="quesAns(questions[q].question);nextQtn(q);" ng-disabled="!myans.length">Next </button>
                     <div class="boy" ng-show="boy">
                         <img src="img/boy.png" class="img-responsive" alt="">
                     </div>
