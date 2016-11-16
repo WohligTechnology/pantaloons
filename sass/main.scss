@@ -6,6 +6,7 @@
 @import "../bower_components/fancyBox/source/jquery.fancybox.css";
 @import "../bower_components/swiper/dist/css/swiper.min.css";
 @import "../bower_components/smart-app-banner/smart-app-banner.css";
+@import "../bower_components/angular-ui-select/dist/select.css";
 
 /* Bootstrap Variables Goes Here */
 
@@ -209,7 +210,7 @@ h1 {
     .main-note {
         padding: 10px 0 30px;
         .note {
-            font-size: 16px;
+            font-size: 22px;
         }
     }
 }
@@ -222,7 +223,7 @@ h1 {
     color: #fff;
     .detail-form {
         text-align: left;
-        padding-bottom: 80px;
+        padding-bottom: 40px;
         label {
             font-size: 22px;
         }
@@ -245,18 +246,22 @@ h1 {
             padding: 0 7px;
         }*/
         .sel-div {
-            background-color: #fff;
+            // background-color: #fff;
             display: inline-block;
             position: relative;
-            background-image: url(../img/caret-img.png);
-            background-repeat: no-repeat;
-            background-position-x: 100%;
-            background-size: 20px 22px;
+            // background-image: url(../img/caret-img.png);
+            // background-repeat: no-repeat;
+            // background-position-x: 100%;
+            // background-size: 20px 22px;
             width: 40%;
             margin-left: 5px;
         }
         .select-group {
-            padding-bottom: 15px;
+            padding-bottom: 30px;
+            label,
+            .sel-div {
+                vertical-align: middle;
+            }
         }
     }
     .begin {
