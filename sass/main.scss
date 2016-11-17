@@ -226,7 +226,10 @@ h1 {
     background-position-x: 100%;
     background-size: 20px 22px;
     /* width: 40%; */
-    margin-left: 5px;
+    // margin-left: 5px;
+    .ui-select-placeholder {
+        display: none;
+    }
 }
 
 .ui-select-bootstrap .ui-select-toggle>.caret {

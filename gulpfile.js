@@ -9,6 +9,7 @@ var jsArray = [
 
     //Angular Libs
     './bower_components/angular/angular.min.js',
+    './bower_components/jStorage/jstorage.min.js',
     './bower_components/angular-sanitize/angular-sanitize.min.js',
     './bower_components/angular-animate/angular-animate.min.js',
     './bower_components/angular-bootstrap/ui-bootstrap.min.js',
