@@ -589,8 +589,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 $scope.girl = true;
             }
         } else {
-            $scope.q = 20;
-            $state.go("thankyou");
+            // $scope.q = 20;
+            // $state.go("thankyou");
         }
 
     }
@@ -625,10 +625,18 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // console.log('$scope.finalData',$scope.finalData);
         if ($scope.q > 18) {
             NavigationService.formSubmit($scope.finalData, function(data) {
+              if(data.value == true){
+                $state.go("thankyou");
+              }else{
+                alert("Error in Submitting Feedback!!");
+              }
                 // console.log(data);
                 // console.log('$scope.finalData',$scope.finalData);
 
-            })
+              }, function(err) {
+                  console.log(err);
+                  alert("Error in Submitting Feedback!!");
+              });
         }
           $scope.myans = '';
     }
